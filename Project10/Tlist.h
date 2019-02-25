@@ -4,7 +4,7 @@
 using namespace std;
 
 template <class T>
-//asd
+
 class TLink
 {
 public:
@@ -20,6 +20,59 @@ protected:
 	int pos, size;
 public:
 
+	TPolinom()
+	{
+		TManom m;
+		m.coef = 0;
+		m.powZ = -1;
+		pHead->val = m;
+	}
+	TPolinom(const Tpolinom &p)
+	{
+		pHead->val = p.pHead->val;
+		for (p.Reset()!p.IsEnd(), p.GoNext())
+			InsLast(p.pCurr->val);
+	}
+	void operator +=(const TPolinom &q)
+	{
+		TManom pM, qM, r;
+		Reset();
+		q.Reset();
+		While(1)
+		{
+			pM = pCurr->val;
+			qM = q.pCurr->val;
+			if (pM > qM)
+				GoNext();
+			else
+			{
+				if (qM > pM)
+				{
+					InsCurr(qM);
+					q.GoNext();
+				}
+				else
+				{
+					if (pM.powZ == -1)
+						break;
+					else
+						r = pM.coeff + qM.coeff;
+					if (r == 0)
+					{
+						DelCurr();
+						q.GoNext;
+					}
+					else
+					{
+						pCurr->val.coeff = r;
+						q.GoNext();
+						GoNext();
+					}
+				}
+
+			}
+		}
+	}
 	THeadList()
 	{
 		TLink<T>*tmp = new TLink<T>;
@@ -72,6 +125,25 @@ public:
 			pCurr = pPrev->pNext;
 			size--;
 		}
+	}
+
+	void Reset()
+	{
+		pCurr = pFirst;
+		pPrev = pHead;
+		pos = 0;
+	}
+
+	void GoNext()
+	{
+		pPrev = pCurr;
+		pCurr = pCurr->pNext;
+		pos++;
+	}
+
+	bool IsEnd()
+	{
+		return pCurr == pHead;
 	}
 
 
