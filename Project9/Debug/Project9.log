@@ -1,5 +1,1 @@
-﻿D:\VisualStudio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (Project9.vcxproj).  Это может привести к ошибкам очистки и перестроения.
-  MyForm.cpp
-  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
-  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  Project9.vcxproj -> D:\Git\manomlab\Debug\graphics.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets(46,5): error MSB8036: не удалось найти Windows SDK версии 10.0.17763.0. Установите нужную версию Windows SDK или измените версию SDK на страницах свойств проекта либо щелкнув правой кнопкой мыши решение и выбрав "Изменить целевую платформу решения".
