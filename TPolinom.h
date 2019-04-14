@@ -133,16 +133,16 @@ istream& operator>>(istream &istr, TPolinom &n)
 {
 	int k;
 	int i = 0;
-	std::cout << "How many peaces: ";
+	std::cout << "Polynom's peaces: ";
 	istr >> k;
 	while (i<k)
 	{
-		std::cout << "Monom number:" << i + 1 << endl;
+		std::cout << "Monom's number:" << i + 1 << endl;
 		TMonom m1;
 		istr >> m1;
 		n.InsMonom(m1);
 		i++;
-		std::cout << "-----------------------------------------------------" << endl;
+		std::cout << "============================" << endl;
 	}
 	return istr;
 }

@@ -62,7 +62,7 @@ bool operator < (const TMonom& m1, const TMonom& m2)
 istream &operator>>(istream &istr, TMonom &m)
 {
 	int coeff, x, y, z;
-	std::cout << "-----------------------------------------------------" << endl;
+	std::cout << "================================================" << endl;
 	std::cout << "Coeff:";
 	istr >> coeff;
 	std::cout << "Power of X:";
