@@ -40,7 +40,12 @@ void TPolinom::InsMonom(const TMonom &n)
 	else
 		for (Reset(); !IsEnd(); GoNext())
 		{
-			if (pCurr->val == n)
+			if (n<pLast->val)
+			{
+				InsLast(n);
+				break;
+			}
+			if (pCurr->val==n)
 			{
 				pCurr->val.coeff += n.coeff;
 				if (pCurr->val.coeff == 0)
